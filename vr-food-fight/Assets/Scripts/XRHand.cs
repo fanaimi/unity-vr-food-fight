@@ -8,6 +8,10 @@ public class XRHand : MonoBehaviour
     // sphere to change color to
     [SerializeField] GameObject colorTarget;
     
+    private MeshRenderer targetRend;
+    private Color targetDefaultColor;
+    private Color targetNewColor;
+    
     private GrabbableObject hoveredObject;
     private GrabbableObject grabbedObject;
 
@@ -16,7 +20,8 @@ public class XRHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetRend = colorTarget.GetComponent<MeshRenderer>();
+        targetDefaultColor = targetRend.material.color;
     }
 
     // Update is called once per frame
@@ -30,6 +35,7 @@ public class XRHand : MonoBehaviour
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
                 grabbedObject.OnGrabStart(this);
+                targetRend.material.color = grabbedObject.hoverColor;
             }
         }
 
@@ -38,6 +44,7 @@ public class XRHand : MonoBehaviour
             // Release
             if(grabbedObject != null)
             {
+                targetRend.material.color = targetDefaultColor;
                 grabbedObject.OnGrabEnd();
                 grabbedObject = null;
             }
