@@ -24,11 +24,17 @@ public class GrabbableObject : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// this will change the color of the grabbable
+    /// </summary>
     public void OnHoverEnter()
     {
         rend.material.color = hoverColor;
     }
 
+    /// <summary>
+    /// this will get back to normal color
+    /// </summary>
     public void OnHoverExit()
     {
         rend.material.color = defaultColor;
