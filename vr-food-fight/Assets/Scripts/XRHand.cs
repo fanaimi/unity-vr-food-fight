@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class XRHand : MonoBehaviour
 {
+    
+    // sphere to change color to
+    [SerializeField] GameObject colorTarget;
+    
     private GrabbableObject hoveredObject;
     private GrabbableObject grabbedObject;
 

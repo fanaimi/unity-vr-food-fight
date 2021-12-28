@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrabbableObject : MonoBehaviour
 {
     public Color hoverColor;
+    
 
     private MeshRenderer rend;
     private Color defaultColor;
