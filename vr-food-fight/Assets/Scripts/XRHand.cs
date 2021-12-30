@@ -6,7 +6,9 @@ public class XRHand : MonoBehaviour
 {
     
     // sphere to change color to
-    [SerializeField] GameObject colorTarget;
+    [SerializeField] private GameObject colorTarget;
+    // lerping speed
+    [SerializeField] [Range(0f, 1f)] private float lerpTime;
     
     private MeshRenderer targetRend;
     private Color targetDefaultColor;
@@ -35,7 +37,16 @@ public class XRHand : MonoBehaviour
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
                 grabbedObject.OnGrabStart(this);
-                targetRend.material.color = grabbedObject.hoverColor;
+                // changing colour immediately
+                // targetRend.material.color = grabbedObject.hoverColor;
+                
+                // transitioning colour
+                targetRend.material.color =
+                    Color.Lerp(
+                        targetDefaultColor,
+                        grabbedObject.hoverColor,
+                        lerpTime * Time.deltaTime);
+
             }
         }
 
