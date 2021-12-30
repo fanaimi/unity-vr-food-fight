@@ -8,11 +8,14 @@ public class XRHand : MonoBehaviour
     // sphere to change color to
     [SerializeField] private GameObject colorTarget;
     // lerping speed
-    [SerializeField] [Range(0f, 1f)] private float lerpTime;
+    // [SerializeField] [Range(0f, 1f)] 
+    private float lerpTime;
     
     private MeshRenderer targetRend;
     private Color targetDefaultColor;
     private Color targetNewColor;
+
+    private bool grabbing;
     
     private GrabbableObject hoveredObject;
     private GrabbableObject grabbedObject;
@@ -22,6 +25,7 @@ public class XRHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lerpTime = .8f;
         targetRend = colorTarget.GetComponent<MeshRenderer>();
         targetDefaultColor = targetRend.material.color;
     }
@@ -29,24 +33,34 @@ public class XRHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         if (Input.GetButtonDown(grabButton))
         {
             // Grab
             if(hoveredObject != null)
             {
+                grabbing = true;
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
                 grabbedObject.OnGrabStart(this);
                 // changing colour immediately
                 // targetRend.material.color = grabbedObject.hoverColor;
                 
+            }
+        }
+
+        if (Input.GetButton(grabButton))
+        {
+            // holding 
+            if(grabbing)
+            {
                 // transitioning colour
                 targetRend.material.color =
                     Color.Lerp(
-                        targetDefaultColor,
+                        targetRend.material.color,
                         grabbedObject.hoverColor,
                         lerpTime * Time.deltaTime);
-
             }
         }
 
@@ -55,6 +69,7 @@ public class XRHand : MonoBehaviour
             // Release
             if(grabbedObject != null)
             {
+                grabbing = false;
                 targetRend.material.color = targetDefaultColor;
                 grabbedObject.OnGrabEnd();
                 grabbedObject = null;

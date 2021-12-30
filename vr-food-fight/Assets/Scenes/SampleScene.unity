@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTarget: {fileID: 979155530}
-  lerpTime: 0.019
+  lerpTime: 0
   grabButton: XRI_Left_GripButton
 --- !u!54 &148173656
 Rigidbody:
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorTarget: {fileID: 979155530}
-  lerpTime: 0
+  lerpTime: 0.023
   grabButton: XRI_Right_GripButton
 --- !u!1 &979155530
 GameObject:
