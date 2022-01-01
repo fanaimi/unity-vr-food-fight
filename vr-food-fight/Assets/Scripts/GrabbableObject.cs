@@ -7,6 +7,7 @@ public class GrabbableObject : MonoBehaviour
     public Color hoverColor;
 
     [SerializeField] public bool isColorProp;
+    [SerializeField] public bool isFruit;
     
     private MeshRenderer rend;
     private Color defaultColor;
