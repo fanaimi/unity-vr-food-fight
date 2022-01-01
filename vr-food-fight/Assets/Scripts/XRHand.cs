@@ -11,6 +11,8 @@ public class XRHand : MonoBehaviour
     // [SerializeField] [Range(0f, 1f)] 
     private float lerpTime;
     
+    
+    
     private MeshRenderer targetRend;
     private Color targetDefaultColor;
     private Color targetNewColor;
@@ -38,12 +40,17 @@ public class XRHand : MonoBehaviour
         if (Input.GetButtonDown(grabButton))
         {
             // Grab
-            if(hoveredObject != null)
+            if(hoveredObject != null  )
             {
                 grabbing = true;
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
-                grabbedObject.OnGrabStart(this);
+                if (grabbedObject.isColorProp)
+                {
+                    grabbedObject.OnGrabStart(this);
+                }
+
+                
                 // changing colour immediately
                 // targetRend.material.color = grabbedObject.hoverColor;
                 
@@ -55,12 +62,17 @@ public class XRHand : MonoBehaviour
             // holding 
             if(grabbing)
             {
-                // transitioning colour
-                targetRend.material.color =
-                    Color.Lerp(
-                        targetRend.material.color,
-                        grabbedObject.hoverColor,
-                        lerpTime * Time.deltaTime);
+                if (grabbedObject.isColorProp)
+                {
+                    // transitioning colour
+                    targetRend.material.color =
+                        Color.Lerp(
+                            targetRend.material.color,
+                            grabbedObject.hoverColor,
+                            lerpTime * Time.deltaTime);
+                }
+
+                
             }
         }
 
@@ -70,9 +82,14 @@ public class XRHand : MonoBehaviour
             if(grabbedObject != null)
             {
                 grabbing = false;
-                targetRend.material.color = targetDefaultColor;
-                grabbedObject.OnGrabEnd();
-                grabbedObject = null;
+                if (grabbedObject.isColorProp)
+                {
+                   targetRend.material.color = targetDefaultColor;
+                   grabbedObject.OnGrabEnd();
+                   grabbedObject = null; 
+                }
+
+                
             }
         }
     }
