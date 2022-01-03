@@ -40,55 +40,72 @@ Discrete to Continuous, but it's NOT recommended
 
 
 * changing colour to an object
-```c#
-    private MeshRenderer rend;
-    private Color defaultColor;
-    private Rigidbody rb;
+    ```c#
+        private MeshRenderer rend;
+        private Color defaultColor;
+        private Rigidbody rb;
 
 
-    void Start()
-    {
-            rend = GetComponent<MeshRenderer>();
-            defaultColor = rend.material.color;
-            rb = GetComponent<Rigidbody>();
-            // changing colour immediately
-            rend.material.color = hoverColor;
-    }
+        void Start()
+        {
+                rend = GetComponent<MeshRenderer>();
+                defaultColor = rend.material.color;
+                rb = GetComponent<Rigidbody>();
+                // changing colour immediately
+                rend.material.color = hoverColor;
+        }
 
 
-```
+    ```
 
 
 * TRANSITIONING colour to an object
-```c#
-    private MeshRenderer rend;
-    private Color defaultColor;
-    private Rigidbody rb;
+    ```c#
+        private MeshRenderer rend;
+        private Color defaultColor;
+        private Rigidbody rb;
 
 
-    void Start()
-    {
-            rend = GetComponent<MeshRenderer>();
-            defaultColor = rend.material.color;
-            rb = GetComponent<Rigidbody>();
-            
-    }
-
-    void Update()
-    {
-        
-        // transitioning colour
-        rend.material.color =
-            Color.Lerp(
-                targetRend.material.color,
-                grabbedObject.hoverColor,
-                lerpTime * Time.deltaTime);
+        void Start()
+        {
+                rend = GetComponent<MeshRenderer>();
+                defaultColor = rend.material.color;
+                rb = GetComponent<Rigidbody>();
                 
-    }
-```
+        }
+
+        void Update()
+        {
+            
+            // transitioning colour
+            rend.material.color =
+                Color.Lerp(
+                    targetRend.material.color,
+                    grabbedObject.hoverColor,
+                    lerpTime * Time.deltaTime);
+                    
+        }
+    ```
+
+
+* grip button interaction
+    ```c#
+        public string grabButton; // will be given the "XRI_Right_GripButton" value for Input manager
+    ```
+    * edit > project settings > Input Manager 
+        * as a default no input fo XR controllers
+
+    * Assets > seed XR Input Bindings     
+        this will seed and add all XR controllers inputs in edit > project settings > Input Manager 
+
+    * we will use "XRI_Right_GripButton"      
+
+    * paste this string in the grabButton field
 
 
 
 
 
-read this later: https://medium.com/@danielcestrella/an-improved-way-of-grabbing-objects-in-vr-with-unity3d-558517a8db1
+
+
+* read this later: https://medium.com/@danielcestrella/an-improved-way-of-grabbing-objects-in-vr-with-unity3d-558517a8db1
