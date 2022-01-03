@@ -103,9 +103,24 @@ Discrete to Continuous, but it's NOT recommended
     * paste this string in the grabButton field
 
 
+* detect grip button actions
+    ```c#
+        // start grab
+        if (Input.GetButtonDown(grabButton))
+        { ... }
+
+        // release grab
+        if(Input.GetButtonUp(grabButton))
+        { ... }
+
+        // keep grabbing
+        if(Input.GetButton(grabButton))
+        { ... }
+    ```
 
 
+* read this later about grabbing objects: 
+https://medium.com/@danielcestrella/an-improved-way-of-grabbing-objects-in-vr-with-unity3d-558517a8db1
 
 
-
-* read this later: https://medium.com/@danielcestrella/an-improved-way-of-grabbing-objects-in-vr-with-unity3d-558517a8db1
+* if needed we can activate camera > rendering > post processing (check box)
