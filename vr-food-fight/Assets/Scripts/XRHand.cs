@@ -96,7 +96,7 @@ public class XRHand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check whether it tiggeres with an object that we can grab
+        // Check whether it triggers with an object that we can grab
         GrabbableObject tempObject = other.GetComponent<GrabbableObject>();
 
         if (tempObject != null)

@@ -26,10 +26,67 @@ Discrete to Continuous, but it's NOT recommended
     * OnCollisionEnter
     
 * TRIGGER COLLISION: 
-    * rigidbody > check Is Trigger > code: isTrigger = true 
+    * collider > check Is Trigger > code: isTrigger = true 
     * objects will not bounce, but will go through
     * OnTriggerEnter
     * OnTriggerExit
+
+* hands in controllers: 
+    * add sphere collider
+        * is trigger
+    * rigid body    
+        * no gravity
+        * is kinematic
+
+
+* changing colour to an object
+```c#
+    private MeshRenderer rend;
+    private Color defaultColor;
+    private Rigidbody rb;
+
+
+    void Start()
+    {
+            rend = GetComponent<MeshRenderer>();
+            defaultColor = rend.material.color;
+            rb = GetComponent<Rigidbody>();
+            // changing colour immediately
+            rend.material.color = hoverColor;
+    }
+
+
+```
+
+
+* TRANSITIONING colour to an object
+```c#
+    private MeshRenderer rend;
+    private Color defaultColor;
+    private Rigidbody rb;
+
+
+    void Start()
+    {
+            rend = GetComponent<MeshRenderer>();
+            defaultColor = rend.material.color;
+            rb = GetComponent<Rigidbody>();
+            
+    }
+
+    void Update()
+    {
+        
+        // transitioning colour
+        rend.material.color =
+            Color.Lerp(
+                targetRend.material.color,
+                grabbedObject.hoverColor,
+                lerpTime * Time.deltaTime);
+                
+    }
+```
+
 
 
 
