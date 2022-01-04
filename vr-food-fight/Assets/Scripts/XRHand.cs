@@ -51,13 +51,28 @@ public class XRHand : MonoBehaviour
                 }
 
                 
-                // changing colour immediately
-                // targetRend.material.color = grabbedObject.hoverColor;
-                
-            }
+
+            } // hoveredObject
+        } // getButtonDown
+
+        if (Input.GetButton(grabButton))
+        {
+            if (grabbing)
+            {
+                Debug.Log("grabbing");
+                if (grabbedObject.isColorProp)
+                {
+                    // transitioning colour
+                    targetRend.material.color =
+                        Color.Lerp(
+                            targetRend.material.color,
+                            grabbedObject.hoverColor,
+                            lerpTime * Time.deltaTime);
+                } 
+            } // grabbing
         }
 
-         
+
 
         if(Input.GetButtonUp(grabButton))
         {
