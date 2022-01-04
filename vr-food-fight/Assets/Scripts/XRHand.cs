@@ -59,7 +59,7 @@ public class XRHand : MonoBehaviour
         {
             if (grabbing)
             {
-                Debug.Log("grabbing");
+                // Debug.Log("grabbing");
                 if (grabbedObject.isColorProp)
                 {
                     // transitioning colour
@@ -70,7 +70,7 @@ public class XRHand : MonoBehaviour
                             lerpTime * Time.deltaTime);
                 } 
             } // grabbing
-        }
+        } // Input.GetButton 
 
 
 
