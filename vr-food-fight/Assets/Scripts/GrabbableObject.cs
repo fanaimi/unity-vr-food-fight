@@ -51,7 +51,7 @@ public class GrabbableObject : MonoBehaviour
         }
     }
 
-    public void OnGrabStart(XRHand hand)
+    public virtual void OnGrabStart(XRHand hand)
     {
         transform.SetParent(hand.transform);
         rb.useGravity = false;
@@ -59,7 +59,8 @@ public class GrabbableObject : MonoBehaviour
         // read https://medium.com/@danielcestrella/an-improved-way-of-grabbing-objects-in-vr-with-unity3d-558517a8db1
     }
 
-    public void OnGrabEnd()
+    // VIRTUAL can be overridden by an inheriting class (overriding)
+    public virtual void OnGrabEnd()
     {
         transform.SetParent(null);
         rb.useGravity = true;

@@ -23,6 +23,11 @@ public class XRHand : MonoBehaviour
     private GrabbableObject grabbedObject;
 
     public string grabButton;
+    
+    
+    // session 9
+    public Animator anim;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +53,11 @@ public class XRHand : MonoBehaviour
                 if (grabbedObject.isColorProp)
                 {
                     grabbedObject.OnGrabStart(this);
+                    
                 }
 
+                    // session 9 // accessing the Hand Animator
+                    anim.SetBool("Gripped", true);
                 
 
             } // hoveredObject
@@ -85,10 +93,12 @@ public class XRHand : MonoBehaviour
                    targetRend.material.color = targetDefaultColor;
                    grabbedObject.OnGrabEnd();
                    grabbedObject = null; 
+                   
+                   
                 }
-
-                
             }
+                   // session 9 // accessing the Hand Animator
+                   anim.SetBool("Gripped", false);
         }
     }
 
