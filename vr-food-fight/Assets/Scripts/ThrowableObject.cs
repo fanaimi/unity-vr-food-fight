@@ -6,7 +6,7 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
 {
 
     [SerializeField] private Rigidbody body;
-    [SerializeField] private float throwBoost;
+    [SerializeField] private float throwBoost = 400f;
 
     private XRHand tempHand;
 
@@ -28,5 +28,5 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
         Debug.Log("throw");
         body.AddForce(throwBoost * tempHand.transform.forward); // amount * direction
     } // OnGrabEnd
-
+   
 }

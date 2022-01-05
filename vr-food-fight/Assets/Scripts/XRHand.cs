@@ -51,11 +51,7 @@ public class XRHand : MonoBehaviour
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
                 // if (grabbedObject.isColorProp)
-                if (true)
-                {
-                    grabbedObject.OnGrabStart(this);
-                    
-                }
+                grabbedObject.OnGrabStart(this);
             } // hoveredObject
             
             // session 9 // accessing the Hand Animator
@@ -87,7 +83,8 @@ public class XRHand : MonoBehaviour
             if(grabbedObject != null)
             {
                 grabbing = false;
-                if (grabbedObject.isColorProp)
+                // if (grabbedObject.isColorProp)
+                if (true)
                 {
                    targetRend.material.color = targetDefaultColor;
                    grabbedObject.OnGrabEnd();
