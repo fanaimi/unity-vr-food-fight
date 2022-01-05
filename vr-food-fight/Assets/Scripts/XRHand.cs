@@ -50,17 +50,16 @@ public class XRHand : MonoBehaviour
                 grabbing = true;
                 grabbedObject = hoveredObject;
                 hoveredObject = null;
-                if (grabbedObject.isColorProp)
+                // if (grabbedObject.isColorProp)
+                if (true)
                 {
                     grabbedObject.OnGrabStart(this);
                     
                 }
-
-                    // session 9 // accessing the Hand Animator
-                    anim.SetBool("Gripped", true);
-                
-
             } // hoveredObject
+            
+            // session 9 // accessing the Hand Animator
+            anim.SetBool("Gripped", true);
         } // getButtonDown
 
         if (Input.GetButton(grabButton))
@@ -94,11 +93,11 @@ public class XRHand : MonoBehaviour
                    grabbedObject.OnGrabEnd();
                    grabbedObject = null; 
                    
-                   
                 }
             }
-                   // session 9 // accessing the Hand Animator
-                   anim.SetBool("Gripped", false);
+                   
+            // session 9 // accessing the Hand Animator
+            anim.SetBool("Gripped", false);
         }
     }
 
