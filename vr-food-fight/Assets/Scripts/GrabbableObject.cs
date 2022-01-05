@@ -20,9 +20,9 @@ public class GrabbableObject : MonoBehaviour
         {
             rend = GetComponent<MeshRenderer>();
             defaultColor = rend.material.color;
-            rb = GetComponent<Rigidbody>();
         }
 
+            rb = GetComponent<Rigidbody>();
         
     }
 
