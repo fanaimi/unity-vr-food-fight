@@ -130,3 +130,4 @@ MonoBehaviour:
   moveAmount: 0.5
   spinupAmount: 0.8
   upDownSpeed: 0.6
+  canMove: 1

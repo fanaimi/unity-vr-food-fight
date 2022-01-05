@@ -6,8 +6,6 @@ public class FoodItem : ThrowableObject
 {
    
     [SerializeField] private string soundName;
-    [SerializeField] private Target targetPrefab;
-    [SerializeField] private Vector3 targetPos = new Vector3(-5.5f, 2.8f, 6.6f);
 
     public override void OnGrabEnd()
     {
@@ -25,14 +23,11 @@ public class FoodItem : ThrowableObject
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.useGravity = true;
-            Destroy(gameObject, 5);
-            Destroy(collision.gameObject, 5);
-            if (Instantiate(targetPrefab, targetPos, Quaternion.identity))
-            {
-                Debug.Log("instantiated");
-            }
-
-            ;
+            Destroy(gameObject, 6f);
+            Destroy(collision.gameObject, 3);
+            // if(collision.gameObject == null)
+            Invoke("BuildNewTarget", 4f);
+            
         }
         
         if (collision.transform.CompareTag("Ground"))
@@ -42,4 +37,11 @@ public class FoodItem : ThrowableObject
         }
         
     }
+
+    private void BuildNewTarget()
+    {
+        Debug.Log("1234");
+        FindObjectOfType<TargetSpawner>().SpawnNewTarget();
+    }
+
 }

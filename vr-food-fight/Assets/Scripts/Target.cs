@@ -9,7 +9,25 @@ public class Target : MonoBehaviour
 
     private Vector3 startPosition;
 
-
+    /// <summary>
+    /// singleton start
+    /// </summary>
+    private static Target _instance;
+    public static Target Instance { get { return _instance; } }
+    
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        } else {
+            _instance = this;
+        }
+    }
+    /// <summary>
+    /// singleton end
+    /// </summary>
+    
     // Start is called before the first frame update
     void Start()
     {
