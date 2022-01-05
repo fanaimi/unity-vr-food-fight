@@ -128,6 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
-  isFruit: 0
-  body: {fileID: 0}
-  throwBoost: 400
+  isFruit: 1
+  body: {fileID: 6333155915347571335}

@@ -25,8 +25,12 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
         base.OnGrabEnd();
         
         // overriding section 
-        Debug.Log("throw");
+        Debug.Log(isFruit);
         body.AddForce(throwBoost * tempHand.transform.forward); // amount * direction
+        if (isFruit)
+        {
+            Destroy(gameObject, 5);
+        }
     } // OnGrabEnd
    
 }
