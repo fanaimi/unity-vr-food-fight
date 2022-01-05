@@ -210,6 +210,7 @@ MonoBehaviour:
   hoverColor: {r: 0.12009009, g: 0.39370954, b: 0.8679245, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!54 &33834625
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ Transform:
   m_Children:
   - {fileID: 33371248}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148173652
 GameObject:
@@ -493,6 +494,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &186098237
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,8 +545,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 186098240}
-  throwBoost: 400
 --- !u!54 &186098240
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1074,6 +1076,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &341519235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1083,7 +1086,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1151,6 +1154,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &387528238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1001461325703151796, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
@@ -1171,6 +1175,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &388660653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1253,6 +1258,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &486307582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1319,6 +1325,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: ff0676c8d91f84f49b766d604828e420, type: 3}
   m_PrefabInstance: {fileID: 486307582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &489673267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489673269}
+  - component: {fileID: 489673268}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &489673268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489673267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fab4ceefa06b1d4899b979199b0b632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: a31f13faa53ae44468760ad693d2ef83, type: 3}
+    name: pop
+    volume: 0.317
+    pitch: 1.01
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 825dcbfa6c9f66e4fbe9780b61bdc19d, type: 3}
+    name: 
+    volume: 0.329
+    pitch: 1.04
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: e9463c31564ed2d40bebd96f1e290c96, type: 3}
+    name: 
+    volume: 0.313
+    pitch: 0.95
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: a19d5b447b0bfeb49a2fbd73dfb43ff7, type: 3}
+    name: 
+    volume: 0.313
+    pitch: 1.1
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: e93cea4e4da652e42b7a6c9a18f67da1, type: 3}
+    name: 
+    volume: 0.344
+    pitch: 0.98
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 0ac118947da773e4fabb29393ef31f35, type: 3}
+    name: gong
+    volume: 0.344
+    pitch: 0.98
+    source: {fileID: 0}
+    loop: 0
+--- !u!4 &489673269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489673267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7455444, y: 4.532098, z: 2.4658847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543964439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1932,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &629016931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1954,7 +2041,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &678220017
 Mesh:
@@ -2163,6 +2250,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &843735631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,8 +2301,8 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 843735634}
-  throwBoost: 400
 --- !u!54 &843735634
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2313,6 +2401,12 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
+--- !u!4 &859216801 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+  m_PrefabInstance: {fileID: 1113484900760936148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879839842
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2437,7 @@ Transform:
   - {fileID: 42180630}
   - {fileID: 1575187675}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888235215
 GameObject:
@@ -2395,8 +2489,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 888235218}
-  throwBoost: 400
 --- !u!54 &888235218
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2592,6 +2686,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &959317389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,8 +2737,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 959317392}
-  throwBoost: 400
 --- !u!54 &959317392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2897,8 +2992,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 1036045696}
-  throwBoost: 400
 --- !u!54 &1036045696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3161,6 +3256,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!43 &1093279283
 Mesh:
   m_ObjectHideFlags: 0
@@ -3407,6 +3503,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &1214628934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3600,7 +3697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3942,6 +4039,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1357959271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,6 +4619,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1531730424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1001569470632669151, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
@@ -4541,6 +4640,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1575187673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,7 +4714,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4682,6 +4782,38 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
+--- !u!1 &1596492367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1596492368}
+  m_Layer: 0
+  m_Name: TargetArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1596492368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596492367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 859216801}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1600416583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 563378183959722698, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
@@ -4702,6 +4834,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!43 &1607462124
 Mesh:
   m_ObjectHideFlags: 0
@@ -4896,7 +5029,7 @@ Transform:
   - {fileID: 1357959272}
   - {fileID: 293319213}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1647918793
 GameObject:
@@ -5026,6 +5159,7 @@ MonoBehaviour:
   hoverColor: {r: 0.10151712, g: 0.7075472, b: 0.09122459, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1694304448
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,6 +5196,7 @@ MonoBehaviour:
   hoverColor: {r: 0.8962264, g: 0.09018624, b: 0.09018624, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!54 &1694304450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5174,6 +5309,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1001 &1823331094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5420,6 +5556,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1913314164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5470,8 +5607,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 1913314167}
-  throwBoost: 400
 --- !u!54 &1913314167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5570,6 +5707,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1944418594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1001448548025893100, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
@@ -5590,6 +5728,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1945080031
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,8 +5779,8 @@ MonoBehaviour:
   hoverColor: {r: 0.9339623, g: 0.076361634, b: 0.92966884, a: 0}
   isColorProp: 1
   isFruit: 0
+  audioManager: {fileID: 0}
   body: {fileID: 1945080034}
-  throwBoost: 400
 --- !u!54 &1945080034
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5904,6 +6043,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &2040264379 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1128999843324578, guid: 373095bd3f7ddb948bce9f5ece6ef02d, type: 3}
@@ -5942,6 +6082,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 0
+  audioManager: {fileID: 0}
 --- !u!1 &2058023019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,7 +6382,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.12e-43, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 7.65e-43, w: 8e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -6253,13 +6394,74 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138677391}
-  m_LocalRotation: {x: 0.7064338, y: 0.47771442, z: 0.030843567, w: 0.5213338}
+  m_LocalRotation: {x: 0.21439588, y: -0.32486245, z: 0.67382085, w: 0.628064}
   m_LocalPosition: {x: 0.24, y: 3, z: 4.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 130, z: 90}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 45, y: -9.7, z: 90}
+--- !u!1001 &1113484900760936148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1596492368}
+    m_Modifications:
+    - target: {fileID: 1113484900543710537, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_Name
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.009999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113484900543710581, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
 --- !u!1001 &4355761606621419607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6269,7 +6471,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4355761605725985436, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6406,7 +6608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2224270901530991541, guid: 078034597dc9fa646a50d449b52fb7a5, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2224270901530991541, guid: 078034597dc9fa646a50d449b52fb7a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6571,6 +6773,10 @@ PrefabInstance:
     - target: {fileID: 5636878668063780379, guid: 078034597dc9fa646a50d449b52fb7a5, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671885640175449320, guid: 078034597dc9fa646a50d449b52fb7a5, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6024716842095121320, guid: 078034597dc9fa646a50d449b52fb7a5, type: 3}
       propertyPath: m_LocalPosition.x

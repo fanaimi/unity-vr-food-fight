@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,14 @@ public class GrabbableObject : MonoBehaviour
     private MeshRenderer rend;
     private Color defaultColor;
     private Rigidbody rb;
+
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
 
     // Start is called before the first frame update
     void Start()

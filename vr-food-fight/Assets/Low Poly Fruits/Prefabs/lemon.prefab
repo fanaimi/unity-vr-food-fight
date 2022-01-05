@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23923918548762266}
   - component: {fileID: 6333155915496069034}
   - component: {fileID: 6333155915496069032}
-  - component: {fileID: 4683750660819090377}
+  - component: {fileID: 4561355728590307582}
   m_Layer: 0
   m_Name: lemon
   m_TagString: Untagged
@@ -114,7 +114,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
---- !u!114 &4683750660819090377
+--- !u!114 &4561355728590307582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,10 +123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638444836145330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f17786539ef75a46963ddaf1cf8c6e7, type: 3}
+  m_Script: {fileID: 11500000, guid: d5b6c5572f9df514a9b23c8e183fac6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 1
+  audioManager: {fileID: 0}
   body: {fileID: 6333155915496069034}
+  soundName: pop
