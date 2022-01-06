@@ -5383,6 +5383,59 @@ Transform:
   m_Father: {fileID: 293319213}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1716633597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716633599}
+  - component: {fileID: 1716633598}
+  m_Layer: 0
+  m_Name: FruitSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1716633598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716633597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375060c40259fad439b12c1246747569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitPrefabs:
+  - {fileID: 4811480486830944319, guid: 8b421e629adb63f48b6fd8b32d917999, type: 3}
+  - {fileID: 1170558664526630882, guid: d9736a1112a909441a56bc7072f7ddb7, type: 3}
+  - {fileID: 4699612858168892581, guid: 5ddd1f3b0341bda46b9a7c754690d020, type: 3}
+  - {fileID: 982298402697965626, guid: d463d74f788887e43b74c915fed96acf, type: 3}
+  - {fileID: 2684851371750888270, guid: b47895bdab35fe046a197484c37a47f9, type: 3}
+  - {fileID: 1094907176691460427, guid: aef29a605924b0e42a8fd4eb48f68281, type: 3}
+  - {fileID: 3168486060012053128, guid: 9be8b7abeb1cf1143b1df3ec92699427, type: 3}
+  - {fileID: 5037467700369520694, guid: 7f5ee848d45700b40bc73e0d3a6e4622, type: 3}
+  - {fileID: 1797887633734936729, guid: ce4eb2587b0cb464d8de756d07c295eb, type: 3}
+--- !u!4 &1716633599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716633597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749747528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1001736837459394268, guid: 808d09d4f051b4149a0a6e4e03510ea9, type: 3}
