@@ -32,6 +32,10 @@ public class Target : MonoBehaviour
     void Start()
     {
         startPosition = transform.position;
+        moveSpeed = Random.Range(.5f, 2f);
+        moveAmount = Random.Range(.5f, 2f);
+        spinupAmount = Random.Range(.5f, 2f);
+        upDownSpeed = Random.Range(.5f, 2f);
     }
 
     // Update is called once per frame
