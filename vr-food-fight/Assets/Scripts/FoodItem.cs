@@ -59,7 +59,7 @@ public class FoodItem : ThrowableObject
 
     private void BuildNewTarget()
     {
-        Debug.Log("1234");
+        // Debug.Log("1234");
         FindObjectOfType<TargetSpawner>().SpawnNewTarget();
     }
 
