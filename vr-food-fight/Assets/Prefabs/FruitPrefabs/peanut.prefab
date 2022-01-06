@@ -129,6 +129,7 @@ MonoBehaviour:
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   isColorProp: 0
   isFruit: 1
-  audioManager: {fileID: 0}
   body: {fileID: 5518640177445472783}
+  grabbingType: 1
+  numOfVelocitySamples: 20
   soundName: pop
