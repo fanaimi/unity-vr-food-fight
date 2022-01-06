@@ -23,11 +23,11 @@ public class TargetSpawner : MonoBehaviour
 
     public void SpawnNewTarget()
     {
-        Debug.Log("yeah");
+        // Debug.Log("yeah");
         
         if (Instantiate(targetPrefab, targetPos, Quaternion.Euler(90, 0, 0), targetArea.transform))
         {
-            Debug.Log("instantiated");
+            // Debug.Log("instantiated");
         }
     }
 

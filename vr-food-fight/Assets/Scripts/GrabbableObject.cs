@@ -9,22 +9,16 @@ public class GrabbableObject : MonoBehaviour
 
     [SerializeField] public bool isColorProp;
     [SerializeField] public bool isFruit;
-    
+
+    private FruitSpawner fruitSpawner;
     private MeshRenderer rend;
     private Color defaultColor;
     private Rigidbody rb;
-
-    public AudioManager audioManager;
-
-    private void Awake()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-    }
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        fruitSpawner = FindObjectOfType<FruitSpawner>();
         if (isColorProp)
         {
             rend = GetComponent<MeshRenderer>();
@@ -62,6 +56,12 @@ public class GrabbableObject : MonoBehaviour
 
     public virtual void OnGrabStart(XRHand hand)
     {
+        if (isFruit)
+        {
+            // print(transform.parent);
+            fruitSpawner.spawnParent = transform.parent;
+        }
+
         transform.SetParent(hand.transform);
         rb.useGravity = false;
         rb.isKinematic = true;

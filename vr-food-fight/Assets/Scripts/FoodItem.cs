@@ -7,13 +7,16 @@ public class FoodItem : ThrowableObject
    
     [SerializeField] private string soundName;
     private Vector3 originalFruitPosition;
-    private Transform parent;
+    private Transform thisParent;
 
     private FruitSpawner fruitSpawner;
+
+    private AudioManager audioManager;
 
     private void Awake()
     {
         fruitSpawner = FindObjectOfType<FruitSpawner>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public override void OnGrabStart(XRHand hand)
@@ -21,13 +24,12 @@ public class FoodItem : ThrowableObject
         base.OnGrabStart(hand);
         // modification
         originalFruitPosition = transform.position;
-        parent = this.parent.transform;
     }
     
     public override void OnGrabEnd()
     {
         base.OnGrabEnd();
-        fruitSpawner.SpawnNewFruit(originalFruitPosition, parent);
+        fruitSpawner.SpawnNewFruit(originalFruitPosition);
         Destroy(gameObject, 5);
     }
 
