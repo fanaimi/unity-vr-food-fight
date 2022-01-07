@@ -9,13 +9,13 @@ public class FoodItem : ThrowableObject
     private Vector3 originalFruitPosition;
     private Transform thisParent;
 
-    private FruitSpawner fruitSpawner;
+    // private FruitSpawner fruitSpawner;
 
     private AudioManager audioManager;
 
     private void Awake()
     {
-        fruitSpawner = FindObjectOfType<FruitSpawner>();
+        // fruitSpawner = FindObjectOfType<FruitSpawner>();
         audioManager = FindObjectOfType<AudioManager>();
     }
 

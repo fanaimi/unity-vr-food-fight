@@ -43,6 +43,7 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
 
     public override void OnGrabStart(XRHand hand)
     {
+        // Debug.Log("THROWABLE on grab START");
         // modification: storing hand reference
         tempHand = hand;
         if (grabbingType == GrabType.Kinematic)
@@ -63,7 +64,7 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
     // OVERRIDE: overriding inherited OnGrabEnd (virtual)
     public override void OnGrabEnd()
     {
-        
+        // Debug.Log("THROWABLE on grab end");
         if (grabbingType == GrabType.Kinematic)
         {
             // execute the inherited method content
@@ -75,7 +76,7 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
         {
             // removing the joint 
             Destroy(joint);
-        // } // joint
+                // } // joint
         
         
             // overriding section 

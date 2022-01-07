@@ -10,7 +10,7 @@ public class GrabbableObject : MonoBehaviour
     [SerializeField] public bool isColorProp;
     [SerializeField] public bool isFruit;
 
-    private FruitSpawner fruitSpawner;
+    public FruitSpawner fruitSpawner;
     private MeshRenderer rend;
     private Color defaultColor;
     private Rigidbody rb;
