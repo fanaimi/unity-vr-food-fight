@@ -37,7 +37,7 @@ public class FoodItem : ThrowableObject
     {
         if (collision.transform.CompareTag("Target"))
         {
-            
+            FindObjectOfType<UiManager>().UpdateTargetsUI();
             audioManager.Play("gong");
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;

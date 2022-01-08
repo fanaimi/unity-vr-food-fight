@@ -14,15 +14,16 @@ public class UiManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateTargetsUI();
-        InvokeRepeating("SetTimer", 1f, 1f);
+        GetStarted();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GetStarted()
     {
-        
-    }
+        secsLeft = 60;
+        numOfTargets = 0;
+        InvokeRepeating("SetTimer", 1f, 1f);
+    } // GetStarted
+    
 
     public void SetTimer()
     {
@@ -45,6 +46,7 @@ public class UiManager : MonoBehaviour
     
     public void UpdateTargetsUI()
     {
+        numOfTargets++;
         numOfTargetsTxt.text = numOfTargets.ToString();
     } // UpdateTimerUI
     
