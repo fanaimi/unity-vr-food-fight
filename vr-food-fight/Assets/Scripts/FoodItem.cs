@@ -42,17 +42,17 @@ public class FoodItem : ThrowableObject
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.useGravity = true;
+            BuildNewTarget();
             Destroy(gameObject, .5f);
             Destroy(collision.gameObject, 3);
             // if(collision.gameObject == null)
-            Invoke("BuildNewTarget", 4f);
             
         }
         
         if (collision.transform.CompareTag("Ground"))
         {
             audioManager.Play(soundName);
-            Destroy(gameObject, 5);
+            Destroy(gameObject, 3);
         }
         
     }
@@ -60,7 +60,7 @@ public class FoodItem : ThrowableObject
     private void BuildNewTarget()
     {
         // Debug.Log("1234");
-        FindObjectOfType<TargetSpawner>().SpawnNewTarget();
+        FindObjectOfType<TargetSpawner>().WaitToSpawn();
     }
 
 }

@@ -8,20 +8,15 @@ public class TargetSpawner : MonoBehaviour
     [SerializeField] private GameObject targetArea;
     [SerializeField] private Target targetPrefab;
     [SerializeField] private Vector3 targetPos = new Vector3(-5.5f, 2.8f, 6.6f);
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+    public void WaitToSpawn()
     {
-        
+        Invoke("SpawnNewTarget", 1.5f);
     }
 
 
-    public void SpawnNewTarget()
+    private void SpawnNewTarget()
     {
         // Debug.Log("yeah");
         
