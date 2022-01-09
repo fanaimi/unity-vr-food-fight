@@ -42,7 +42,7 @@ public class FoodItem : ThrowableObject
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.useGravity = true;
-            Destroy(gameObject, 6f);
+            Destroy(gameObject, .5f);
             Destroy(collision.gameObject, 3);
             // if(collision.gameObject == null)
             Invoke("BuildNewTarget", 4f);
