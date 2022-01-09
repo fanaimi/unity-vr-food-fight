@@ -44,7 +44,7 @@ public class FoodItem : ThrowableObject
             collision.rigidbody.useGravity = true;
             BuildNewTarget();
             Destroy(gameObject, .5f);
-            Destroy(collision.gameObject, 3);
+            Destroy(collision.gameObject, 1.5f);
             // if(collision.gameObject == null)
             
         }
@@ -59,7 +59,7 @@ public class FoodItem : ThrowableObject
 
     private void BuildNewTarget()
     {
-        // Debug.Log("1234");
+        Debug.Log("build new target");
         FindObjectOfType<TargetSpawner>().WaitToSpawn();
     }
 
