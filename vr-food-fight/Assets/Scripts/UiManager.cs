@@ -7,7 +7,8 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text secsLeftTxt;
     [SerializeField] private TMP_Text realScoreTxt;
-
+    [SerializeField] private GameObject GameOverCanvas;
+    
     private int secsLeft = 60;
     private int score = 0;
     
@@ -35,7 +36,9 @@ public class UiManager : MonoBehaviour
         else
         {
             GameManager.Instance.playing = false;
+            GameOverCanvas.SetActive(true);
             Debug.Log("time expired");
+            Destroy(FindObjectOfType<Target>().gameObject);
             CancelInvoke("SetTimer");
         }
 

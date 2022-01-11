@@ -21,13 +21,14 @@ public class TargetSpawner : MonoBehaviour
 
     private void SpawnNewTarget()
     {
-        // Debug.Log("yeah");
         if (GameManager.Instance.playing == true)
         {
-            if (Instantiate(targetPrefabs[Random.Range(0,2)], targetPos, Quaternion.Euler(90, 0, 0), targetArea.transform))
-                    {
-                        //Debug.Log("instantiated");
-                    }
+            Instantiate(
+                targetPrefabs[Random.Range(0, 2)],
+                targetPos,
+                Quaternion.Euler(90, 0, 0),
+                targetArea.transform);
+
         } // playing
 
         
