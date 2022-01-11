@@ -12,19 +12,23 @@ public class TargetSpawner : MonoBehaviour
 
     public void WaitToSpawn()
     {
-        Debug.Log("waitTospawn");
+        // Debug.Log("waitTospawn");
         Invoke("SpawnNewTarget", 2.5f);
     }
 
 
     private void SpawnNewTarget()
     {
-        Debug.Log("yeah");
-        
-        if (Instantiate(targetPrefab, targetPos, Quaternion.Euler(90, 0, 0), targetArea.transform))
+        // Debug.Log("yeah");
+        if (GameManager.Instance.playing == true)
         {
-            Debug.Log("instantiated");
-        }
+            if (Instantiate(targetPrefab, targetPos, Quaternion.Euler(90, 0, 0), targetArea.transform))
+                    {
+                        //Debug.Log("instantiated");
+                    }
+        } // playing
+
+        
     }
 
 }

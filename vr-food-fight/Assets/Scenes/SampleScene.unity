@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secsLeftTxt: {fileID: 1459794064}
-  numOfTargetsTxt: {fileID: 841381867}
+  realScoreTxt: {fileID: 841381867}
 --- !u!4 &385341770
 Transform:
   m_ObjectHideFlags: 0
@@ -3603,7 +3603,7 @@ GameObject:
   - component: {fileID: 841381868}
   - component: {fileID: 841381867}
   m_Layer: 5
-  m_Name: NumOfTargetsTxt
+  m_Name: RealScoreTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5115,7 +5115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1105778855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,7 +5155,7 @@ GameObject:
   - component: {fileID: 1151812746}
   - component: {fileID: 1151812745}
   m_Layer: 5
-  m_Name: TargetsTxt
+  m_Name: ScoreTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5200,7 +5200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Scoret:
+  m_text: 'Score:
 
 '
   m_isRightToLeft: 0
@@ -7189,6 +7189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5d0045b0bea5d4ea4bcb3406f5de53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playing: 1
 --- !u!4 &1462265833
 Transform:
   m_ObjectHideFlags: 0
@@ -8703,7 +8704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1994975662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8721,7 +8722,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2.7, y: -12.215}
+  m_AnchoredPosition: {x: 6.4, y: 2}
   m_SizeDelta: {x: -14.3722, y: 24.4303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994975663

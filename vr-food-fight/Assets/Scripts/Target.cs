@@ -6,7 +6,8 @@ public class Target : MonoBehaviour
 {
     public float moveSpeed, moveAmount, spinupAmount, upDownSpeed;
     public bool canMove = true;
-
+    [SerializeField] public int scoreGain;
+    
     private Vector3 startPosition;
 
     /// <summary>

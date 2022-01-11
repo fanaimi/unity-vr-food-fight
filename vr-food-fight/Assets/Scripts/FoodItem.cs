@@ -37,12 +37,16 @@ public class FoodItem : ThrowableObject
     {
         if (collision.transform.CompareTag("Target"))
         {
-            FindObjectOfType<UiManager>().UpdateTargetsUI();
+            FindObjectOfType<UiManager>().UpdateTargetsUI(FindObjectOfType<Target>().scoreGain);
             audioManager.Play("gong");
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.useGravity = true;
-            BuildNewTarget();
+            if (GameManager.Instance.playing)
+            {
+                BuildNewTarget();
+            }
+
             Destroy(gameObject, .5f);
             Destroy(collision.gameObject, 1.5f);
             // if(collision.gameObject == null)
@@ -59,7 +63,7 @@ public class FoodItem : ThrowableObject
 
     private void BuildNewTarget()
     {
-        Debug.Log("build new target");
+        // Debug.Log("build new target");
         FindObjectOfType<TargetSpawner>().WaitToSpawn();
     }
 

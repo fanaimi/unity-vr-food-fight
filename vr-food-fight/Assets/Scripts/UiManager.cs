@@ -6,10 +6,10 @@ using UnityEngine;
 public class UiManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text secsLeftTxt;
-    [SerializeField] private TMP_Text numOfTargetsTxt;
+    [SerializeField] private TMP_Text realScoreTxt;
 
     private int secsLeft = 60;
-    private int numOfTargets = 0;
+    private int score = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,8 @@ public class UiManager : MonoBehaviour
 
     private void GetStarted()
     {
-        secsLeft = 60;
-        numOfTargets = 0;
+        secsLeft = 30;
+        score = 0;
         InvokeRepeating("SetTimer", 1f, 1f);
     } // GetStarted
     
@@ -34,6 +34,8 @@ public class UiManager : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.playing = false;
+            Debug.Log("time expired");
             CancelInvoke("SetTimer");
         }
 
@@ -44,10 +46,10 @@ public class UiManager : MonoBehaviour
         secsLeftTxt.text = $"{secsLeft} secs";
     } // UpdateTimerUI
     
-    public void UpdateTargetsUI()
+    public void UpdateTargetsUI(int scoreGain)
     {
-        numOfTargets++;
-        numOfTargetsTxt.text = numOfTargets.ToString();
+        score += scoreGain;
+        realScoreTxt.text = score.ToString();
     } // UpdateTimerUI
     
 

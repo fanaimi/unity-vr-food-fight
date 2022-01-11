@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7843673279359534084}
   - component: {fileID: 2191312149561533663}
   m_Layer: 0
-  m_Name: Target
+  m_Name: TargetSmall
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1113484900543710537}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.871, y: 5.821, z: 4.872}
-  m_LocalScale: {x: 1.187485, y: 0.01, z: 1.1053195}
+  m_LocalScale: {x: 0.5, y: 0.01, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a45c06021cdbf024682f35eb96e0c6db, type: 2}
+  - {fileID: 2100000, guid: 28e07a75f79498847806967681e32e33, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,9 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac48089eb4bb8ab43912759d83d2a8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   moveAmount: 0.5
   spinupAmount: 0.8
   upDownSpeed: 0.6
   canMove: 1
-  scoreGain: 5
+  scoreGain: 10
