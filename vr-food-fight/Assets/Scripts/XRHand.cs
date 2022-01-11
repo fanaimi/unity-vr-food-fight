@@ -28,13 +28,18 @@ public class XRHand : MonoBehaviour
     // session 9
     public Animator anim;
     
-
+    // session 11
+    public Hand hand = Hand.Left;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         lerpTime = .8f;
         targetRend = colorTarget.GetComponent<MeshRenderer>();
         targetDefaultColor = targetRend.material.color;
+
+        grabButton = $"XRI_{hand}_GripButton";
     }
 
     // Update is called once per frame
@@ -121,4 +126,12 @@ public class XRHand : MonoBehaviour
             hoveredObject = null;
         }
     }
+}
+
+
+[System.Serializable]
+public enum Hand
+{
+    Left, 
+    Right
 }
