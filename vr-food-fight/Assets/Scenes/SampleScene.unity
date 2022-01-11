@@ -7234,8 +7234,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetArea: {fileID: 1596492367}
-  targetPrefab: {fileID: 2191312149561533663, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
   targetPos: {x: -5.5, y: 2.8, z: 6.6}
+  targetPrefabs:
+  - {fileID: 1113484900543710537, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
+  - {fileID: 1113484900543710537, guid: a8b8cc9654cab1b4cad75e96c91fbbff, type: 3}
+  - {fileID: 1113484900543710537, guid: 5f27d8e9bb9f1d248b7ba64c24676e30, type: 3}
 --- !u!4 &1523035712
 Transform:
   m_ObjectHideFlags: 0
