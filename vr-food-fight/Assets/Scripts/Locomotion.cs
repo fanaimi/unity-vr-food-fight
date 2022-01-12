@@ -9,7 +9,7 @@ public class Locomotion : MonoBehaviour
     private XRHand controller;
     public Transform xrRig;
 
-    private float playerSpeed = 1f;
+    private float playerSpeed = .8f;
 
     private LineRenderer line;
     
@@ -73,7 +73,7 @@ public class Locomotion : MonoBehaviour
         forwardDirection.Normalize();
         rightDirection.Normalize();
         
-        // getting directions
+        // getting axis directions
         float horizontal = Input.GetAxis($"XRI_{controller.hand}_Primary2DAxis_Horizontal");
         float vertical = Input.GetAxis($"XRI_{controller.hand}_Primary2DAxis_Vertical");
         
@@ -82,7 +82,7 @@ public class Locomotion : MonoBehaviour
         xrRig.position += (vertical * Time.deltaTime * -forwardDirection * playerSpeed);
 
         // left and right 
-        xrRig.position += (horizontal * Time.deltaTime * forwardDirection * playerSpeed);
+        xrRig.position += (horizontal * Time.deltaTime * rightDirection * playerSpeed);
 
 
     } // HandleMovement
