@@ -85,7 +85,6 @@ public class Locomotion : MonoBehaviour
         xrRig.position += (horizontal * Time.deltaTime * rightDirection * playerSpeed);
     } // HandleMovement
 
-
     /// <summary>
     /// handling raycast for teleportation
     /// </summary>
