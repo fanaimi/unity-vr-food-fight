@@ -83,8 +83,6 @@ public class Locomotion : MonoBehaviour
 
         // left and right 
         xrRig.position += (horizontal * Time.deltaTime * rightDirection * playerSpeed);
-
-
     } // HandleMovement
 
 
@@ -109,5 +107,4 @@ public class Locomotion : MonoBehaviour
         }
 
     } // HandleRaycast
-
 }
