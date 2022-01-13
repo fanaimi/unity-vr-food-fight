@@ -13,12 +13,17 @@ public class Locomotion : MonoBehaviour
 
     private LineRenderer line;
     
+    // session 12
+    public Vector3 hitPosition;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<XRHand>();
         line = GetComponent<LineRenderer>();
         line.enabled = false;
+        line.positionCount = lineResolution + 1;
     }
 
     // Update is called once per frame
@@ -87,6 +92,7 @@ public class Locomotion : MonoBehaviour
 
     /// <summary>
     /// handling raycast for teleportation
+    /// Line Renderer
     /// </summary>
     void HandleRaycast()
     {
@@ -97,8 +103,27 @@ public class Locomotion : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
             line.enabled = true;
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, hitInfo.point);
+            /* straight line
+             line.SetPosition(0, transform.position);
+            line.SetPosition(1, hitInfo.point);*/
+            hitPosition = hitInfo.point;
+            CurveLine(hitInfo.point);
+
+
+            bool validTarget = hitInfo.collider.CompareTag("teleportation");
+            Color color = validTarget ? Color.blue : Color.red;
+            line.endColor = color;
+            line.startColor = color;
+
+            if (validTarget && Input.GetButtonDown($"XRI_{controller.hand}_TriggerButton"))
+            {
+                // snap movement
+                // xrRig.position = hitInfo.point;
+                // fading and teleporting
+                StartCoroutine(FadeTeleport());
+            }
+            
+
         }
         else
         {
@@ -106,4 +131,59 @@ public class Locomotion : MonoBehaviour
         }
 
     } // HandleRaycast
+
+
+    //              B
+    //    A                     C
+    
+    // session 12
+    public float height = 2f;
+    [Range(5,40)] // number of indexes in the curved line
+    public int lineResolution = 10;
+    void CurveLine(Vector3 hitPosition)
+    {
+        Vector3 A = controller.transform.position;
+        Vector3 C = hitPosition;
+        Vector3 B = (C - A) / 2 + A;
+
+        B.y += height;
+
+        for (int i = 0; i <= lineResolution ; i++)
+        {
+            float t = (float)i / (float)lineResolution;
+            Vector3 AtoB = Vector3.Lerp(A, B, t);
+            Vector3 BtoC = Vector3.Lerp(B, C, t);
+            Vector3 curvePosition = Vector3.Lerp(AtoB, BtoC, t);
+
+            
+            line.SetPosition(i, curvePosition);
+            
+        }
+    }
+
+    public Renderer screen;
+
+    private IEnumerator FadeTeleport()
+    {
+        float currentTime = 0f;
+
+        while (currentTime < 1)
+        {
+            currentTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+            screen.material.color = Color.Lerp(Color.clear, Color.black, currentTime);
+        }
+
+        xrRig.position = hitPosition;
+
+        yield return new WaitForSeconds(.5f);
+
+        while (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+            screen.material.color = Color.Lerp(Color.clear, Color.black, currentTime);
+        }
+    }
+
 }
