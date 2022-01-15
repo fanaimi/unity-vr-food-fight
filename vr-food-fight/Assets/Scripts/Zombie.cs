@@ -14,8 +14,8 @@ public class Zombie : MonoBehaviour
 
     private float m_distanceFromPrey;
 
-    private float walkingRange = 5f;
-    private float runningRange = 3;
+    private float walkingRange = 8f;
+    private float runningRange = 4;
 
     private Rigidbody zrb;
 
@@ -60,24 +60,30 @@ public class Zombie : MonoBehaviour
             {
                 m_animator.SetBool("Running", false);
             }
-            
+
+            approaching = true;
             m_animator.SetBool("Following", true);
             MoveTowardsPrey();
         }
         else if(m_distanceFromPrey >= walkingRange)
         {
+            approaching = false;
             m_animator.SetBool("Following", false);
         }
 
     } // checkDistance
 
-
-
+    private bool approaching = false;
+    [SerializeField] private float tempSpeed = .9f;
     private void MoveTowardsPrey()
     {
-        Vector3 velocity = transform.forward * 3;
+        if (approaching)
+        {
+            Vector3 velocity = transform.forward * tempSpeed;
         
         zrb.MovePosition(zrb.position + velocity * Time.deltaTime);
+        }
+
     } // MoveTowardsPrey
 
 
