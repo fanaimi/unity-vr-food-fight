@@ -21,7 +21,7 @@ public class Locomotion : MonoBehaviour
 
     private void Awake()
     {
-        rigOriginalRotation = xrRig.rotation.ToEulerAngles();
+        rigOriginalRotation = xrRig.forward;
     }
 
     // Start is called before the first frame update
@@ -147,9 +147,7 @@ public class Locomotion : MonoBehaviour
                 {
                     StartCoroutine(FadeTeleport(
                         hitPosition, 
-                         //Quaternion.identity.ToEulerAngles()
-                        //Vector3.forward
-                        xrRig.rotation.ToEulerAngles()
+                        xrRig.forward
                         )
                     );
                 } else if (portalTarget)
@@ -208,7 +206,7 @@ public class Locomotion : MonoBehaviour
     {
         float currentTime = 0f;
 
-        while (currentTime < 1)
+        while (currentTime < .3f)
         {
             currentTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -219,24 +217,12 @@ public class Locomotion : MonoBehaviour
         xrRig.position = teleportTarget;
         
         
-        /*
-        xrRig.rotation = Quaternion.Euler(
-            rotationAtTarget
-        );*/
-
-        /*xrRig.rotation.y = rotationAtTarget.y;*/
-        
-        
-
         // the second argument, upwards, defaults to Vector3.up
         Quaternion rotation = Quaternion.LookRotation(targetDir, Vector3.up);
-        transform.rotation = rotation;
+        xrRig.rotation = rotation;
         
-        // Rotate needs an angle
-        // xrRig.Rotate(0f, 90f, 0f); 
-        // xrRig.Rotate(rotationAtTarget);
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
 
         while (currentTime > 0)
         {

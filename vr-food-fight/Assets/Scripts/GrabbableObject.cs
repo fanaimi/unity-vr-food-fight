@@ -58,7 +58,7 @@ public class GrabbableObject : MonoBehaviour
     {
         if (isFruit)
         {
-            Debug.Log(transform.parent);
+            // Debug.Log(transform.parent);
             fruitSpawner.spawnParent = transform.parent;
         }
 
