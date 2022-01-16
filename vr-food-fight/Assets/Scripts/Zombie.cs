@@ -23,7 +23,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         zrb = GetComponent<Rigidbody>();
-        InvokeRepeating("Growl",3, 5);
+        InvokeRepeating("Growl",3, 10);
     }
 
     void Growl()
