@@ -63,12 +63,13 @@ public class Zombie : MonoBehaviour
 
             approaching = true;
             m_animator.SetBool("Following", true);
-            MoveTowardsPrey();
+            // MoveTowardsPrey();
         }
         else if(m_distanceFromPrey >= walkingRange)
         {
             approaching = false;
             m_animator.SetBool("Following", false);
+            m_animator.SetBool("Running", false);
         }
 
     } // checkDistance
