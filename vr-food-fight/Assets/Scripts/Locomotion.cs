@@ -111,7 +111,22 @@ public class Locomotion : MonoBehaviour
 
 
             bool validTarget = hitInfo.collider.CompareTag("teleportation");
-            Color color = validTarget ? Color.blue : Color.red;
+            bool portalTarget = hitInfo.collider.CompareTag("Portal");
+            Color color;
+
+            if (validTarget)
+            {
+                color = Color.blue;
+            } else if (portalTarget)
+            {
+                color = Color.green;
+            }
+            else
+            {
+                color = Color.red;
+            }
+
+
             line.endColor = color;
             line.startColor = color;
 
@@ -120,7 +135,7 @@ public class Locomotion : MonoBehaviour
                 // snap movement
                 // xrRig.position = hitInfo.point;
                 // fading and teleporting
-                StartCoroutine(FadeTeleport());
+                StartCoroutine(FadeTeleport(hitPosition));
             }
             
 
@@ -163,7 +178,7 @@ public class Locomotion : MonoBehaviour
 
     public Renderer screen;
 
-    private IEnumerator FadeTeleport()
+    private IEnumerator FadeTeleport(Vector3 teleportTarget)
     {
         float currentTime = 0f;
 
@@ -174,7 +189,8 @@ public class Locomotion : MonoBehaviour
             screen.material.color = Color.Lerp(Color.clear, Color.black, currentTime);
         }
 
-        xrRig.position = hitPosition;
+        // xrRig.position = hitPosition;
+        xrRig.position = teleportTarget;
 
         yield return new WaitForSeconds(.5f);
 

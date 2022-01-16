@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Target
   - teleportation
+  - Portal
   layers:
   - Default
   - TransparentFX
