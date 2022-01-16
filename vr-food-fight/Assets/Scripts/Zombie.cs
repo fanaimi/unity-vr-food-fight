@@ -23,6 +23,12 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         zrb = GetComponent<Rigidbody>();
+        InvokeRepeating("Growl",3, 5);
+    }
+
+    void Growl()
+    {
+        AudioManager.instance.Play("growl");
     }
 
     // Update is called once per frame
@@ -52,6 +58,7 @@ public class Zombie : MonoBehaviour
 
         if ( m_distanceFromPrey < walkingRange)
         {
+            
             if (m_distanceFromPrey <= runningRange)
             {
                 m_animator.SetBool("Running", true);

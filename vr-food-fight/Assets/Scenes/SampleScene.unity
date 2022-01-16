@@ -2794,6 +2794,24 @@ MonoBehaviour:
     pitch: 0.98
     source: {fileID: 0}
     loop: 0
+  - clip: {fileID: 8300000, guid: c57be4429c9aacf429014e52e967506f, type: 3}
+    name: woosh
+    volume: 0.344
+    pitch: 0.98
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 09cdd4be908a6f04f9cc021ab4b5595b, type: 3}
+    name: portalWoosh
+    volume: 0.344
+    pitch: 0.98
+    source: {fileID: 0}
+    loop: 0
+  - clip: {fileID: 8300000, guid: 0e682fb4176e6db45831983c605b1b90, type: 3}
+    name: growl
+    volume: 0.344
+    pitch: 0.98
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &489673269
 Transform:
   m_ObjectHideFlags: 0

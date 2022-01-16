@@ -145,6 +145,7 @@ public class Locomotion : MonoBehaviour
 
                 if (validTarget)
                 {
+                    AudioManager.instance.Play("woosh");
                     StartCoroutine(FadeTeleport(
                         hitPosition, 
                         xrRig.forward
@@ -152,6 +153,7 @@ public class Locomotion : MonoBehaviour
                     );
                 } else if (portalTarget)
                 {
+                    AudioManager.instance.Play("portalWoosh");
                     // Debug.Log(hitInfo.collider.GetComponent<Portal>().targetPosition);
                     StartCoroutine(FadeTeleport(
                             hitInfo.collider.GetComponent<Portal>().targetPosition,
