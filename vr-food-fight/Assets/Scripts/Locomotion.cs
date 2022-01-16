@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.PackageManager;
@@ -15,8 +16,14 @@ public class Locomotion : MonoBehaviour
     
     // session 12
     public Vector3 hitPosition;
-    
-    
+
+    private Vector3 rigOriginalRotation;
+
+    private void Awake()
+    {
+        rigOriginalRotation = xrRig.rotation.ToEulerAngles();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,13 +137,32 @@ public class Locomotion : MonoBehaviour
             line.endColor = color;
             line.startColor = color;
 
-            if (validTarget && Input.GetButtonDown($"XRI_{controller.hand}_TriggerButton"))
+            if (Input.GetButtonDown($"XRI_{controller.hand}_TriggerButton"))
             {
                 // snap movement
                 // xrRig.position = hitInfo.point;
                 // fading and teleporting
-                StartCoroutine(FadeTeleport(hitPosition));
-            }
+
+                if (validTarget)
+                {
+                    StartCoroutine(FadeTeleport(
+                        hitPosition, 
+                         //Quaternion.identity.ToEulerAngles()
+                        //Vector3.forward
+                        xrRig.rotation.ToEulerAngles()
+                        )
+                    );
+                } else if (portalTarget)
+                {
+                    // Debug.Log(hitInfo.collider.GetComponent<Portal>().targetPosition);
+                    StartCoroutine(FadeTeleport(
+                            hitInfo.collider.GetComponent<Portal>().targetPosition,
+                            rigOriginalRotation
+                        )
+                    );
+                }
+
+            }// trigger button down
             
 
         }
@@ -178,7 +204,7 @@ public class Locomotion : MonoBehaviour
 
     public Renderer screen;
 
-    private IEnumerator FadeTeleport(Vector3 teleportTarget)
+    private IEnumerator FadeTeleport(Vector3 teleportTarget, Vector3 targetDir )
     {
         float currentTime = 0f;
 
@@ -191,6 +217,24 @@ public class Locomotion : MonoBehaviour
 
         // xrRig.position = hitPosition;
         xrRig.position = teleportTarget;
+        
+        
+        /*
+        xrRig.rotation = Quaternion.Euler(
+            rotationAtTarget
+        );*/
+
+        /*xrRig.rotation.y = rotationAtTarget.y;*/
+        
+        
+
+        // the second argument, upwards, defaults to Vector3.up
+        Quaternion rotation = Quaternion.LookRotation(targetDir, Vector3.up);
+        transform.rotation = rotation;
+        
+        // Rotate needs an angle
+        // xrRig.Rotate(0f, 90f, 0f); 
+        // xrRig.Rotate(rotationAtTarget);
 
         yield return new WaitForSeconds(.5f);
 

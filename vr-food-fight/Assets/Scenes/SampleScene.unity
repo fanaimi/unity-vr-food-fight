@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f354a473cde80488966f1f8da4f93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: -5.42, y: 0.248, z: 1.457}
 --- !u!1 &385341768
 GameObject:
   m_ObjectHideFlags: 0
