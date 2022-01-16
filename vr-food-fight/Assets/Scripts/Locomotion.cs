@@ -206,9 +206,9 @@ public class Locomotion : MonoBehaviour
     {
         float currentTime = 0f;
 
-        while (currentTime < .3f)
+        while (currentTime < .9f)
         {
-            currentTime += Time.deltaTime;
+            currentTime += Time.deltaTime ;
             yield return new WaitForEndOfFrame();
             screen.material.color = Color.Lerp(Color.clear, Color.black, currentTime);
         }
@@ -218,11 +218,11 @@ public class Locomotion : MonoBehaviour
         
         
         // the second argument, upwards, defaults to Vector3.up
-        Quaternion rotation = Quaternion.LookRotation(targetDir, Vector3.up);
+        Quaternion rotation = Quaternion.LookRotation(targetDir);
         xrRig.rotation = rotation;
         
 
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.4f);
 
         while (currentTime > 0)
         {
