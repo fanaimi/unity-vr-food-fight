@@ -20,7 +20,7 @@ public class UiManager : MonoBehaviour
 
     private void GetStarted()
     {
-        secsLeft = 30;
+        secsLeft = 60*5;
         score = 0;
         InvokeRepeating("SetTimer", 1f, 1f);
     } // GetStarted
