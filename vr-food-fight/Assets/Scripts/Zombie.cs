@@ -23,7 +23,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         zrb = GetComponent<Rigidbody>();
-        InvokeRepeating("Growl",3, 10);
+        // InvokeRepeating("Growl",3, 10);
     }
 
     void Growl()
@@ -56,27 +56,28 @@ public class Zombie : MonoBehaviour
         // https://docs.unity3d.com/2017.4/Documentation/Manual/DirectionDistanceFromOneObjectToAnother.html
         m_distanceFromPrey = m_heading.magnitude;
 
-        if ( m_distanceFromPrey < walkingRange)
+        if ( m_distanceFromPrey <= walkingRange)
         {
             
-            if (m_distanceFromPrey <= runningRange)
+            AudioManager.instance.Play("growl");
+            /*if (m_distanceFromPrey <= runningRange)
             {
                 m_animator.SetBool("Running", true);
             }
             else
             {
                 m_animator.SetBool("Running", false);
-            }
+            }*/
 
             approaching = true;
             m_animator.SetBool("Following", true);
             // MoveTowardsPrey();
         }
-        else if(m_distanceFromPrey >= walkingRange)
+        else if(m_distanceFromPrey > walkingRange)
         {
             approaching = false;
             m_animator.SetBool("Following", false);
-            m_animator.SetBool("Running", false);
+            //m_animator.SetBool("Running", false);
         }
 
     } // checkDistance
