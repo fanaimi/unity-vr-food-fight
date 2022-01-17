@@ -123,8 +123,15 @@ public class Zombie : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("in");
+            // Debug.Log("in");
             GetActive();
+        }
+
+
+        if (other.CompareTag("Bat"))
+        {
+            approaching = false;
+            m_animator.SetBool("Hit", true);
         }
     }
 
@@ -133,7 +140,7 @@ public class Zombie : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            Debug.Log("out");
+            // Debug.Log("out");
             Sleep();
         }
     }

@@ -3757,6 +3757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PC_Baseball_Bat_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1150370041253966, guid: 4d5b4465b0d6b9e42baff27d66b0412f, type: 3}
+      propertyPath: m_TagString
+      value: Bat
+      objectReference: {fileID: 0}
     - target: {fileID: 4384510184495542, guid: 4d5b4465b0d6b9e42baff27d66b0412f, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -3834,6 +3838,10 @@ PrefabInstance:
     - target: {fileID: 1150370041253966, guid: 4d5b4465b0d6b9e42baff27d66b0412f, type: 3}
       propertyPath: m_Name
       value: PC_Baseball_Bat_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150370041253966, guid: 4d5b4465b0d6b9e42baff27d66b0412f, type: 3}
+      propertyPath: m_TagString
+      value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 4384510184495542, guid: 4d5b4465b0d6b9e42baff27d66b0412f, type: 3}
       propertyPath: m_RootOrder
@@ -5752,6 +5760,10 @@ PrefabInstance:
     - target: {fileID: 1659455743989630, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
       propertyPath: m_Name
       value: PC_Baseball_Bat_10 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659455743989630, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
+      propertyPath: m_TagString
+      value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 4108717056845458, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
       propertyPath: m_RootOrder
@@ -9162,6 +9174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PC_Baseball_Bat_12 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1138089077365102, guid: b2c2eaa77adbe704690e52a50768f2a8, type: 3}
+      propertyPath: m_TagString
+      value: Bat
+      objectReference: {fileID: 0}
     - target: {fileID: 4503458550929186, guid: b2c2eaa77adbe704690e52a50768f2a8, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -9392,6 +9408,10 @@ PrefabInstance:
     - target: {fileID: 1138089077365102, guid: b2c2eaa77adbe704690e52a50768f2a8, type: 3}
       propertyPath: m_Name
       value: PC_Baseball_Bat_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138089077365102, guid: b2c2eaa77adbe704690e52a50768f2a8, type: 3}
+      propertyPath: m_TagString
+      value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 4503458550929186, guid: b2c2eaa77adbe704690e52a50768f2a8, type: 3}
       propertyPath: m_RootOrder
@@ -14865,6 +14885,10 @@ PrefabInstance:
     - target: {fileID: 1659455743989630, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
       propertyPath: m_Name
       value: PC_Baseball_Bat_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659455743989630, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
+      propertyPath: m_TagString
+      value: Bat
       objectReference: {fileID: 0}
     - target: {fileID: 4108717056845458, guid: 6e75424edaedeb6419c9dd3da010b7cf, type: 3}
       propertyPath: m_RootOrder
