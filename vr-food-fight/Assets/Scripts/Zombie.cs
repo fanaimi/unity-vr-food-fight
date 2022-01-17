@@ -84,11 +84,25 @@ public class Zombie : MonoBehaviour
         }
 
     } // checkDistance
-    
-    
-    
-    
-    
+
+
+    public void GetActive()
+    {
+        approaching = true;
+        // AudioManager.instance.Play("growl");
+        Growl();
+        m_animator.SetBool("Following", true);
+        // MoveTowardsPrey();
+    }
+
+
+    public void Sleep()
+    {
+        approaching = false;
+        m_animator.SetBool("Following", false);
+    }
+
+
 
     private bool approaching = false;
     [SerializeField] private float tempSpeed = .9f;
@@ -104,5 +118,25 @@ public class Zombie : MonoBehaviour
     } // MoveTowardsPrey
 
 
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("in");
+            GetActive();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("out");
+            Sleep();
+        }
+    }
+    
 
 }

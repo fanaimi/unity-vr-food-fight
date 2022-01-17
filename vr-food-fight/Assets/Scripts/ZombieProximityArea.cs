@@ -7,7 +7,7 @@ public class ZombieProximityArea : MonoBehaviour
 {
 
     [SerializeField] private Zombie m_zombie;
-    // Start is called before the first frame update
+    /*// Start is called before the first frame update
     void Start()
     {
         
@@ -17,23 +17,8 @@ public class ZombieProximityArea : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("in");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("out");
-        }
-    }
+   
 }

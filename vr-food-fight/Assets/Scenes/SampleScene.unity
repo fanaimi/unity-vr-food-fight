@@ -355,6 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69701948}
+  - component: {fileID: 69701949}
   m_Layer: 0
   m_Name: XR Handmade Rig
   m_TagString: Player
@@ -377,6 +378,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &69701949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69701947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.39, y: 0.34, z: 5.64}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &71950516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15478,6 +15492,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4493914613783415487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7981552327097637035, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+  m_PrefabInstance: {fileID: 7981552326742942333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493914613783415483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e976dbf352e474a826171e311bac2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5670484333542122390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15794,6 +15819,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 524816451}
     m_Modifications:
+    - target: {fileID: 2115679098976317943, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+      propertyPath: m_zombie
+      value: 
+      objectReference: {fileID: 4493914613783415487}
+    - target: {fileID: 4847910984382497234, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+      propertyPath: m_TagString
+      value: teleportation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409962747756526572, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+      propertyPath: m_Size.x
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409962747756526572, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+      propertyPath: m_Size.z
+      value: 1.82
+      objectReference: {fileID: 0}
     - target: {fileID: 5807879926728878278, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_Name
       value: Zombie_
