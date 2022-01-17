@@ -18,6 +18,7 @@ public class Zombie : MonoBehaviour
     private float runningRange = 4;
 
     private Rigidbody zrb;
+    private bool isAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,11 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotateToFollow();
+        if (isAlive)
+        {
+            RotateToFollow();
+        }
+
         // CheckDistance();
     }
 
@@ -88,18 +93,27 @@ public class Zombie : MonoBehaviour
 
     public void GetActive()
     {
-        approaching = true;
-        // AudioManager.instance.Play("growl");
-        Growl();
-        m_animator.SetBool("Following", true);
-        // MoveTowardsPrey();
+        if (isAlive)
+        {
+            approaching = true;
+                    // AudioManager.instance.Play("growl");
+                    Growl();
+                    m_animator.SetBool("Following", true);
+                    // MoveTowardsPrey();
+        }
+
+        
     }
 
 
     public void Sleep()
     {
-        approaching = false;
-        m_animator.SetBool("Following", false);
+        if (isAlive)
+        {
+            approaching = false;
+            m_animator.SetBool("Following", false);
+        }
+
     }
 
 
@@ -108,7 +122,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] private float tempSpeed = .9f;
     private void MoveTowardsPrey()
     {
-        if (approaching)
+        if (approaching && isAlive)
         {
             Vector3 velocity = transform.forward * tempSpeed;
         
@@ -121,27 +135,37 @@ public class Zombie : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+
+        if (isAlive)
         {
-            // Debug.Log("in");
-            GetActive();
-        }
+
+            if (other.CompareTag("Player"))
+            {
+                // Debug.Log("in");
+                GetActive();
+            }
 
 
-        if (other.CompareTag("Bat"))
-        {
-            approaching = false;
-            m_animator.SetBool("Hit", true);
+            if (other.CompareTag("Bat"))
+            {
+                print("hit");
+                approaching = false;
+                m_animator.SetBool("Hit", true);
+                AudioManager.instance.Play("swing");
+                isAlive = false;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        
-        if (other.CompareTag("Player"))
+        if (isAlive)
         {
-            // Debug.Log("out");
-            Sleep();
+            if (other.CompareTag("Player"))
+            {
+                // Debug.Log("out");
+                Sleep();
+            }
         }
     }
     
