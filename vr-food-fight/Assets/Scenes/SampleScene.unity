@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 69701948}
   m_Layer: 0
   m_Name: XR Handmade Rig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15812,23 +15812,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.450466
+      value: 8.207
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.30278578
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9530587
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15836,7 +15836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -144.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7404733476670085845, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

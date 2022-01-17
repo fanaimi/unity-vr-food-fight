@@ -14,7 +14,7 @@ public class Zombie : MonoBehaviour
 
     private float m_distanceFromPrey;
 
-    private float walkingRange = 8f;
+    private float walkingRange = 3f;
     private float runningRange = 4;
 
     private Rigidbody zrb;
@@ -28,6 +28,7 @@ public class Zombie : MonoBehaviour
 
     void Growl()
     {
+        Debug.Log("growl");
         AudioManager.instance.Play("growl");
     }
 
@@ -35,7 +36,7 @@ public class Zombie : MonoBehaviour
     void Update()
     {
         RotateToFollow();
-        CheckDistance();
+        // CheckDistance();
     }
 
 
@@ -56,10 +57,10 @@ public class Zombie : MonoBehaviour
         // https://docs.unity3d.com/2017.4/Documentation/Manual/DirectionDistanceFromOneObjectToAnother.html
         m_distanceFromPrey = m_heading.magnitude;
 
-        if ( m_distanceFromPrey <= walkingRange)
+        if ( m_distanceFromPrey < walkingRange)
         {
+            Debug.Log(m_distanceFromPrey);
             
-            AudioManager.instance.Play("growl");
             /*if (m_distanceFromPrey <= runningRange)
             {
                 m_animator.SetBool("Running", true);
@@ -70,10 +71,12 @@ public class Zombie : MonoBehaviour
             }*/
 
             approaching = true;
+            // AudioManager.instance.Play("growl");
+            Growl();
             m_animator.SetBool("Following", true);
             // MoveTowardsPrey();
         }
-        else if(m_distanceFromPrey > walkingRange)
+        else if(m_distanceFromPrey >= walkingRange)
         {
             approaching = false;
             m_animator.SetBool("Following", false);
@@ -81,6 +84,11 @@ public class Zombie : MonoBehaviour
         }
 
     } // checkDistance
+    
+    
+    
+    
+    
 
     private bool approaching = false;
     [SerializeField] private float tempSpeed = .9f;
