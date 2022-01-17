@@ -9,7 +9,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TMP_Text realScoreTxt;
     [SerializeField] private GameObject GameOverCanvas;
     
-    private int secsLeft = 60;
+    private int secsLeft = 60 * 5;
     private int score = 0;
     
     // Start is called before the first frame update
