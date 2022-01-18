@@ -75,4 +75,26 @@ public class GrabbableObject : MonoBehaviour
         rb.useGravity = true;
         rb.isKinematic = false;
     }
+    
+    
+    
+    public virtual void OnInteractionStart()
+    {
+        Debug.Log("Interaction started");
+    } // OnInteractionStart
+    
+    
+    public virtual void OnInteractionUpdating()
+    {
+        
+    } // OnInteractionUpdating
+    
+    
+    public virtual void OnInteractionStop()
+    {
+        
+    } // OnInteractionStop
+    
+    
+    
 }

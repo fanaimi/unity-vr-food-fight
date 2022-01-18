@@ -22,7 +22,9 @@ public class XRHand : MonoBehaviour
     private GrabbableObject hoveredObject;
     private GrabbableObject grabbedObject;
 
-    public string grabButton;
+    [SerializeField] private string grabButton;
+    [SerializeField] private string triggerButton;
+    
     
     
     // session 9
@@ -40,6 +42,7 @@ public class XRHand : MonoBehaviour
         targetDefaultColor = targetRend.material.color;
 
         grabButton = $"XRI_{hand}_GripButton";
+        triggerButton = $"XRI_{hand}_TriggerButton";
     }
 
     // Update is called once per frame
@@ -57,6 +60,14 @@ public class XRHand : MonoBehaviour
                 hoveredObject = null;
                 // if (grabbedObject.isColorProp)
                 grabbedObject.OnGrabStart(this);
+                
+                // session 13
+                if (Input.GetButtonDown(triggerButton))
+                {
+                    grabbedObject.OnInteractionStart();
+                }
+
+
             } // hoveredObject
             
             // session 9 // accessing the Hand Animator

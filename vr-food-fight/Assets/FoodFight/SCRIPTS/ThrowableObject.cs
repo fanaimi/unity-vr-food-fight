@@ -104,22 +104,7 @@ public class ThrowableObject : GrabbableObject // inheriting from GrabbableObjec
 
 
 
-    public virtual void OnInteractionStart()
-    {
-        
-    } // OnInteractionStart
     
-    
-    public virtual void OnInteractionUpdating()
-    {
-        
-    } // OnInteractionUpdating
-    
-    
-    public virtual void OnInteractionStop()
-    {
-        
-    } // OnInteractionStop
 
 
 }
