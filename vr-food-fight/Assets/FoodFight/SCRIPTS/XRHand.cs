@@ -49,7 +49,9 @@ public class XRHand : MonoBehaviour
     void Update()
     {
         
-        
+        /*
+         * grabButton
+         */
         if (Input.GetButtonDown(grabButton))
         {
             // Grab
@@ -60,14 +62,6 @@ public class XRHand : MonoBehaviour
                 hoveredObject = null;
                 // if (grabbedObject.isColorProp)
                 grabbedObject.OnGrabStart(this);
-                
-                // session 13
-                if (Input.GetButtonDown(triggerButton))
-                {
-                    grabbedObject.OnInteractionStart();
-                }
-
-
             } // hoveredObject
             
             // session 9 // accessing the Hand Animator
@@ -91,8 +85,6 @@ public class XRHand : MonoBehaviour
             } // grabbing
         } // Input.GetButton 
 
-
-
         if(Input.GetButtonUp(grabButton))
         {
             // Release
@@ -112,7 +104,18 @@ public class XRHand : MonoBehaviour
             // session 9 // accessing the Hand Animator
             anim.SetBool("Gripped", false);
         }
-    }
+        
+        /*
+         * triggerButton
+         * (session 13)
+         */
+        if (Input.GetButtonDown(triggerButton) && grabbedObject)
+        {
+            grabbedObject.OnInteractionStart();
+        }
+        
+        
+    } // update
 
     private void OnTriggerEnter(Collider other)
     {

@@ -13,7 +13,7 @@ public class GrabbableObject : MonoBehaviour
     public FruitSpawner fruitSpawner;
     private MeshRenderer rend;
     private Color defaultColor;
-    private Rigidbody rb;
+    public Rigidbody rb;
     
     // Start is called before the first frame update
     void Start()

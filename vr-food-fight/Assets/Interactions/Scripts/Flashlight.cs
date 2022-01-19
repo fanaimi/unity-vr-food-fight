@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : GrabbableObject
 {
+
+
+    private Light m_flashlight;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_flashlight = GetComponentInChildren<Light>();
+        m_flashlight.enabled = false;
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnInteractionStart()
     {
-        
+        base.OnInteractionStart();
+        print("flashlight here");
+        m_flashlight.enabled = !m_flashlight.enabled;
     }
 }
