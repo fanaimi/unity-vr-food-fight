@@ -16,7 +16,7 @@ public class Grenade : FoodItem
     public override void OnInteractionStart()
     {
         base.OnInteractionStart();
-        print("gun here");
+        print("grenade here");
 
         
     }

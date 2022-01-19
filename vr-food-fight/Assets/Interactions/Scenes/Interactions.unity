@@ -6082,7 +6082,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenade
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6865481956003030535, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
 --- !u!4 &1043114832 stripped
 Transform:
@@ -6106,6 +6107,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503b6b08331f21445a0d26587469978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  isColorProp: 0
+  isFruit: 0
+  fruitSpawner: {fileID: 0}
+  rb: {fileID: 1043114836}
+  body: {fileID: 1043114836}
+  grabbingType: 1
+  numOfVelocitySamples: 20
+  soundName: 
+--- !u!136 &1043114835
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043114833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.029
+  m_Height: 0.12
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.055, z: 0}
+--- !u!54 &1043114836 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 6151578493400138945, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
+  m_PrefabInstance: {fileID: 1043114831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1046180407
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,8 +27,12 @@ public class FoodItem : ThrowableObject
     public override void OnGrabEnd()
     {
         base.OnGrabEnd();
-        fruitSpawner.SpawnNewFruit(originalFruitPosition);
-        Destroy(gameObject, 5);
+        if (isFruit)
+        {
+            fruitSpawner.SpawnNewFruit(originalFruitPosition);
+            Destroy(gameObject, 5);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
