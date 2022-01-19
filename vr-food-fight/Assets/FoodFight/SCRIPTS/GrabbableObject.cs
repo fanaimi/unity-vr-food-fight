@@ -86,13 +86,13 @@ public class GrabbableObject : MonoBehaviour
     
     public virtual void OnInteractionUpdating()
     {
-        
+        Debug.Log("Interaction updating");
     } // OnInteractionUpdating
     
     
     public virtual void OnInteractionStop()
     {
-        
+        Debug.Log("Interaction stopped");
     } // OnInteractionStop
     
     
