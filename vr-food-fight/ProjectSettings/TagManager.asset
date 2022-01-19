@@ -9,6 +9,7 @@ TagManager:
   - teleportation
   - Portal
   - Bat
+  - Bullet
   layers:
   - Default
   - TransparentFX
