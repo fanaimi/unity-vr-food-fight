@@ -76,8 +76,9 @@ public class GrabbableObject : MonoBehaviour
         rb.isKinematic = false;
     }
     
-    
-    
+    /// <summary>
+    /// INTERACTIONS session 13
+    /// </summary>
     public virtual void OnInteractionStart()
     {
         Debug.Log("Interaction started");
