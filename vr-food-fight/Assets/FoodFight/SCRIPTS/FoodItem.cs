@@ -11,12 +11,10 @@ public class FoodItem : ThrowableObject
 
     // private FruitSpawner fruitSpawner;
 
-    private AudioManager audioManager;
 
     private void Awake()
     {
         // fruitSpawner = FindObjectOfType<FruitSpawner>();
-        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public override void OnGrabStart(XRHand hand)
@@ -38,7 +36,7 @@ public class FoodItem : ThrowableObject
         if (collision.transform.CompareTag("Target"))
         {
             FindObjectOfType<UiManager>().UpdateTargetsUI(FindObjectOfType<Target>().scoreGain);
-            audioManager.Play("gong");
+            AudioManager.instance.Play("gong");
             FindObjectOfType<Target>().canMove = false;
             collision.rigidbody.isKinematic = false;
             collision.rigidbody.useGravity = true;
@@ -55,7 +53,7 @@ public class FoodItem : ThrowableObject
         
         if (collision.transform.CompareTag("Ground"))
         {
-            audioManager.Play(soundName);
+            AudioManager.instance.Play(soundName);
             Destroy(gameObject, 3);
         }
         

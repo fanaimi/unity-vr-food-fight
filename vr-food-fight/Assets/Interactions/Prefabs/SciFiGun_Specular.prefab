@@ -376,5 +376,7 @@ MonoBehaviour:
   isFruit: 0
   fruitSpawner: {fileID: 0}
   rb: {fileID: 0}
-  m_bulletPrefab: {fileID: 5175250861361994433, guid: 3cbd79fad89950849ad5e37d8b80bdbe, type: 3}
+  m_bulletPrefab: {fileID: 8765537787770265795, guid: 3cbd79fad89950849ad5e37d8b80bdbe, type: 3}
   m_munition: {fileID: 6444797093868785275}
+  m_gunSpawningPoint: {fileID: 4619018587231587999}
+  m_shootForce: 500

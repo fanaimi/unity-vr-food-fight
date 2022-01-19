@@ -146,13 +146,21 @@ public class Zombie : MonoBehaviour
             }
 
 
-            if (other.CompareTag("Bat"))
+            else if (other.CompareTag("Bat"))
             {
                 print("hit");
                 approaching = false;
                 m_animator.SetBool("Hit", true);
                 AudioManager.instance.Play("swing");
                 isAlive = false;
+            }
+            
+            
+            else if (other.CompareTag("Bullet"))
+            {
+                Debug.Log("hit by bullet");
+                AudioManager.instance.Play("growl");
+                zrb.AddForce(other.transform.forward * 1400);
             }
         }
     }
