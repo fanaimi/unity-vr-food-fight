@@ -66,7 +66,7 @@ public class FoodItem : ThrowableObject
     private void BuildNewTarget()
     {
         // Debug.Log("build new target");
-        FindObjectOfType<TargetSpawner>().WaitToSpawn();
+        FindObjectOfType<TargetSpawner>().WaitToSpawn();    
     }
 
 }
