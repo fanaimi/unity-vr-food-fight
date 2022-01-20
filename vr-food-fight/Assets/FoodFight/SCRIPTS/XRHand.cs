@@ -106,12 +106,24 @@ public class XRHand : MonoBehaviour
         }
         
         /*
-         * triggerButton
+         * triggerButton interactions
          * (session 13)
          */
         if (Input.GetButtonDown(triggerButton) && grabbedObject)
         {
             grabbedObject.OnInteractionStart();
+        }
+        
+        
+        if (Input.GetButton(triggerButton) && grabbedObject)
+        {
+            grabbedObject.OnInteractionUpdating();
+        }
+        
+        
+        if (Input.GetButtonUp(triggerButton) && grabbedObject)
+        {
+            grabbedObject.OnInteractionStop();
         }
         
         
