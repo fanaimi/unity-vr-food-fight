@@ -5716,6 +5716,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937432647}
   m_CullTransparentMesh: 1
+--- !u!114 &944899924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2500857808224944855, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+  m_PrefabInstance: {fileID: 2083270404251437160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e976dbf352e474a826171e311bac2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &959317389
 GameObject:
   m_ObjectHideFlags: 0
@@ -6114,6 +6125,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 427548470}
     m_Modifications:
+    - target: {fileID: 1043114834, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
+      propertyPath: aWindow
+      value: 
+      objectReference: {fileID: 1385429294}
+    - target: {fileID: 1043114834, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
+      propertyPath: m_zombie
+      value: 
+      objectReference: {fileID: 944899924}
     - target: {fileID: 2247431755618394614, guid: 9520358e0bfb85541b5ef1eb1046af10, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -12582,6 +12601,11 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!1 &1385429294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1643765196433972, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+  m_PrefabInstance: {fileID: 2920945980487770035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1447518520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7942602103693386921, guid: 48efc0e2bfb3cfe419eb527938202c33, type: 3}
@@ -25130,14 +25154,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4203725767295450, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203725767295450, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.020000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4203725767295450, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.690001
       objectReference: {fileID: 0}
@@ -25177,16 +25193,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      propertyPath: useCollision
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      propertyPath: hideSplintersInHierarchy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114381180135537044, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
-      propertyPath: destroyColliderWithPhysics
+    - target: {fileID: 134746158305242787, guid: d1c4b4ade0a1b144983fb153ea5a16a6, type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

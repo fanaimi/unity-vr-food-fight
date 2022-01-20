@@ -150,7 +150,6 @@ public class Zombie : MonoBehaviour
             {
                 print("hit");
                 approaching = false;
-                m_animator.SetBool("Hit", true);
                 AudioManager.instance.Play("swing");
                 isAlive = false;
             }
@@ -176,6 +175,13 @@ public class Zombie : MonoBehaviour
             }
         }
     }
-    
+
+    public void Explode()
+    {
+        isAlive = false;
+        approaching = false;
+        m_animator.SetBool("Hit", true);
+    }
+
 
 }

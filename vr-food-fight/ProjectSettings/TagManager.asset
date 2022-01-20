@@ -10,6 +10,7 @@ TagManager:
   - Portal
   - Bat
   - Bullet
+  - Window
   layers:
   - Default
   - TransparentFX

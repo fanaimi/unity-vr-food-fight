@@ -14,14 +14,13 @@ public class Grenade : FoodItem
     [SerializeField] private GameObject m_explosionParticles;
     [SerializeField] private float m_eplosionRadius = 20f;
     [SerializeField] private float m_explosionForce = 5000f;
-    
-    
+    [SerializeField] private Zombie m_zombie;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
         m_countdown = m_delay;
-
     }
 
     private void Update()
@@ -59,37 +58,30 @@ public class Grenade : FoodItem
         {
             // adding exploding force
             Rigidbody m_rb = m_obj.GetComponent<Rigidbody>();
-            BreakableWindow m_brWin = m_obj.GetComponent<BreakableWindow>();
+            // var m_brWin = m_obj.gameObject.GetComponent<BreakableWindow>();
             
-            if (m_rb != null)
-            {
+           
                 if (m_obj.gameObject.layer == 6) // Destructible
-                {
+                { 
+                    if (m_rb != null)
+                    {
+                        m_rb.isKinematic = false;
+                        m_rb.useGravity = true; 
+                        m_rb.AddExplosionForce(m_explosionForce, transform.position, m_eplosionRadius);
+                    } // m_rb
+                    
+                    var m_brWin = m_obj.gameObject.GetComponent<BreakableWindow>();
                     if (m_brWin != null)
                     {
-                        print("SDENG");
+                        // Debug.Log("SDENG");
                         m_brWin.breakWindow();
+                        Destroy(m_brWin.gameObject);
                     }
-
-                    m_rb.isKinematic = false;
-                    m_rb.useGravity = true; 
-                }
-
-                m_rb.AddExplosionForce(m_explosionForce, transform.position, m_eplosionRadius);
-            }
-
-            // eventual damage?
-
-
-        }
-         
-            
-       // destroying grenade object
-       Destroy(gameObject);
-        
-        
-        
-        
+                }// destructible
+        } // foreach
+        m_zombie.Explode();
+        // destroying grenade object
+        Destroy(gameObject);
     } // explode
 
 
