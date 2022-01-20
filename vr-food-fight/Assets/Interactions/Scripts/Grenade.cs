@@ -12,8 +12,8 @@ public class Grenade : FoodItem
     private bool m_hasExploded = false;
 
     [SerializeField] private GameObject m_explosionParticles;
-    [SerializeField] private float m_eplosionRadius = 10f;
-    [SerializeField] private float m_explosionForce = 1000f;
+    [SerializeField] private float m_eplosionRadius = 20f;
+    [SerializeField] private float m_explosionForce = 5000f;
     
     
     void Start()
@@ -62,7 +62,7 @@ public class Grenade : FoodItem
 
             if (m_rb != null)
             {
-                if (m_obj.CompareTag("Breakable"))
+                if (m_obj.gameObject.layer == 6) // Destructible
                 {
                     m_rb.isKinematic = false;
                     m_rb.useGravity = true; 
