@@ -79,7 +79,7 @@ public class Grenade : FoodItem
                     }
                 }// destructible
         } // foreach
-        m_zombie.Explode();
+        // m_zombie.Explode();
         // destroying grenade object
         Destroy(gameObject);
     } // explode
