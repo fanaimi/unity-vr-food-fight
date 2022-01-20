@@ -29,10 +29,10 @@ public class Grenade : FoodItem
         if (m_isActive)
         {
             m_countdown -= Time.deltaTime;
-            if (m_countdown > 0)
+            /*if (m_countdown > 0)
             {
                 print(m_countdown);
-            }
+            }*/
         }
 
         if (m_countdown <= 0f && !m_hasExploded)
@@ -50,7 +50,7 @@ public class Grenade : FoodItem
         // Debug.Log("Boom");
         
         // explosion effect ? particles ? bigExplosionEffect
-        //Instantiate(m_explosionParticles, transform.position, transform.rotation);
+        Instantiate(m_explosionParticles, transform.position, transform.rotation);
         
         // getting close objects
         Collider[] m_closeObjects = Physics.OverlapSphere(transform.position, m_eplosionRadius);
@@ -59,11 +59,18 @@ public class Grenade : FoodItem
         {
             // adding exploding force
             Rigidbody m_rb = m_obj.GetComponent<Rigidbody>();
-
+            BreakableWindow m_brWin = m_obj.GetComponent<BreakableWindow>();
+            
             if (m_rb != null)
             {
                 if (m_obj.gameObject.layer == 6) // Destructible
                 {
+                    if (m_brWin != null)
+                    {
+                        print("SDENG");
+                        m_brWin.breakWindow();
+                    }
+
                     m_rb.isKinematic = false;
                     m_rb.useGravity = true; 
                 }

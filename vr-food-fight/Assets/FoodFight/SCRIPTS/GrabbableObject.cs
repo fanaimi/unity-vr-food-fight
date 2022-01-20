@@ -81,7 +81,7 @@ public class GrabbableObject : MonoBehaviour
     /// </summary>
     public virtual void OnInteractionStart()
     {
-        Debug.Log("Interaction started");
+        // Debug.Log("Interaction started");
     } // OnInteractionStart
     
     

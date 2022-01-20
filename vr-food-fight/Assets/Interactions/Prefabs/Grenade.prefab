@@ -255,7 +255,9 @@ GameObject:
   - component: {fileID: 2247431755618394614}
   - component: {fileID: 2247431755609394710}
   - component: {fileID: 6151578493400138945}
-  - component: {fileID: 6865481956003030535}
+  - component: {fileID: 1043114835}
+  - component: {fileID: 1043114834}
+  - component: {fileID: 1186012116089836048}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -270,9 +272,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2247431755618762198}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.741, y: 1.056, z: -4.951}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3466, y: 1.3466, z: 1.3466}
   m_Children:
   - {fileID: 2247431755618394612}
   - {fileID: 2247431755618394608}
@@ -314,8 +316,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6865481956003030535
-MeshCollider:
+--- !u!136 &1043114835
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -324,7 +326,44 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Radius: 0.029
+  m_Height: 0.12
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.055, z: 0}
+--- !u!114 &1043114834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247431755618762198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503b6b08331f21445a0d26587469978f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 0, b: 0, a: 0}
+  isColorProp: 0
+  isFruit: 0
+  fruitSpawner: {fileID: 0}
+  rb: {fileID: 6151578493400138945}
+  body: {fileID: 6151578493400138945}
+  grabbingType: 1
+  numOfVelocitySamples: 20
+  soundName: 
+  m_explosionParticles: {fileID: 2438233757383502448, guid: 6acb40d0f9a157b458d5edc73d2333c6, type: 3}
+  m_eplosionRadius: 10
+  m_explosionForce: 1000
+--- !u!65 &1186012116089836048
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2247431755618762198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.055495966, y: 0.0951323, z: 0.056465507}
+  m_Center: {x: -0.00007967352, y: 0.050199628, z: 0.00030877913}

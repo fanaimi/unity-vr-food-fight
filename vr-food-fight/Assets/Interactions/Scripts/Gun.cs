@@ -22,7 +22,7 @@ public class Gun : GrabbableObject
     public override void OnInteractionStart()
     {
         base.OnInteractionStart();
-        print("gun here");
+        // print("gun here");
         AudioManager.instance.Play("bang");
         m_munition.Rotate(25,0,0);
         
