@@ -123,6 +123,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &17726955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5885682033053480605, guid: 48efc0e2bfb3cfe419eb527938202c33, type: 3}
+  m_PrefabInstance: {fileID: 4355761606430439194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &17726956
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17726955}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &33371247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1891,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18380
+  m_Name: pb_Mesh-18394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4289,7 +4310,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17416
+  m_Name: pb_Mesh-17430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4485,7 +4506,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18392
+  m_Name: pb_Mesh-18406
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6122,6 +6143,9 @@ MonoBehaviour:
   grabbingType: 1
   numOfVelocitySamples: 20
   soundName: 
+  m_explosionParticles: {fileID: 0}
+  m_eplosionRadius: 10
+  m_explosionForce: 1000
 --- !u!136 &1043114835
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6304,7 +6328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-19344
+  m_Name: pb_Mesh-19358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11294,7 +11318,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-19356
+  m_Name: pb_Mesh-19370
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11889,7 +11913,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16452
+  m_Name: pb_Mesh-16466
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17929,7 +17953,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16464
+  m_Name: pb_Mesh-16478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18999,6 +19023,40 @@ MonoBehaviour:
   isFruit: 0
   fruitSpawner: {fileID: 0}
   rb: {fileID: 0}
+--- !u!1 &1899931206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5886109391304527726, guid: 48efc0e2bfb3cfe419eb527938202c33, type: 3}
+  m_PrefabInstance: {fileID: 4355761606430439194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1899931207
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899931206}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1899931208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899931206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1612297, y: 1.9872526, z: 0.62648624}
+  m_Center: {x: 0.58061486, y: 0.9936263, z: 0.31324312}
 --- !u!1 &1913314164
 GameObject:
   m_ObjectHideFlags: 0
@@ -24542,6 +24600,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6443532, y: 1.0553006, z: 0.93644303}
   m_Center: {x: 0.65381753, y: 0.5276503, z: 0.40271166}
+--- !u!1 &2067591254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5884385148365701414, guid: 48efc0e2bfb3cfe419eb527938202c33, type: 3}
+  m_PrefabInstance: {fileID: 4355761606430439194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2067591255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067591254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1612297, y: 1.9872521, z: 0.62648624}
+  m_Center: {x: 0.58061486, y: 0.99362606, z: 0.31324318}
+--- !u!54 &2067591256
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067591254}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &2080520452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: ff0676c8d91f84f49b766d604828e420, type: 3}
@@ -24558,7 +24650,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-17428
+  m_Name: pb_Mesh-17442
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24934,6 +25026,10 @@ PrefabInstance:
     - target: {fileID: 2500857808224944851, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_Name
       value: Zombie_
+      objectReference: {fileID: 0}
+    - target: {fileID: 2500857808224944851, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2500857808224944853, guid: 770a67f1e21c7d2468ea2ce4c909dc53, type: 3}
       propertyPath: m_CollisionDetection
