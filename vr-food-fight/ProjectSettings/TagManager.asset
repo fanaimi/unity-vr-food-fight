@@ -11,6 +11,8 @@ TagManager:
   - Bat
   - Bullet
   - Window
+  - RedPaint
+  - GreenPaint
   layers:
   - Default
   - TransparentFX
